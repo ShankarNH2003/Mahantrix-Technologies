@@ -70,11 +70,9 @@ body::-webkit-scrollbar {
 }
 #header {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     background-position: center;
     overflow-y:hidden;
-
-  
   }
   
   .container {
@@ -93,7 +91,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 10px 30px;
     background: rgba(0, 0, 0, 0.6);
     color: white;
     z-index: 1000;
@@ -102,9 +100,25 @@ body::-webkit-scrollbar {
   }
   
   .logo {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
     color: hsl(0, 0%, 100%);
+  }
+  .logo h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logoimg {
+    font-size: 1.5em;
+    width: 85px;
+    height: 70px;
+    font-weight: bold;
+    color: #1d72b8;
   }
   
   nav ul li {
@@ -160,14 +174,77 @@ body::-webkit-scrollbar {
     transition: transform 0.3s ease-in-out;
   }
   
-  
+  @media (max-width: 992px) { /* For tablets and smaller desktops */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #00000000;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .menu-icon {
+        display: flex; /* Show hamburger menu */
+    }
+
+    nav ul.show {
+        display: flex; /* Show menu on toggle */
+    }
+
+    .content h1 {
+        font-size: 2.2rem;
+    }
+
+    .content p {
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 0 15px;
+    }
+    .menu-icon.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px)!important;
+      }
+    
+      .menu-icon.active span:nth-child(2) {
+        opacity: 0!important;
+      }
+    
+      .menu-icon.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px)!important;
+        
+      }
+    
+      nav ul.show {
+        display: flex;
+        /* Show the hidden links */
+      }
+      .uDW_Qe {
+          visibility: hidden;
+          margin: 0;
+          padding: 0;
+      }
+      .btn:hover {
+          background: linear-gradient(45deg, hsla(198, 23%, 80%, 0.548), hwb(204 36% 17% / 0.586)); /* Reverse gradient on hover */
+          transform: translateY(-5px); /* Slight upward lift */
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+      }
+      
+      .btn:active {
+          transform: translateY(0); /* Reset position on click */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+      }
+} 
   /* Responsive Navbar */
   @media (max-width: 768px) {
     body, html {
         height: 100%;
         font-family: Arial, sans-serif;
         overflow-x: hidden;
-        padding-top: 120px;
+        padding-top: 85px;
         overflow: auto; /* Allow scrolling */
         scrollbar-width: none; /* For Firefox */
         -ms-overflow-style: none; /* For IE and Edge */
@@ -180,12 +257,25 @@ body::-webkit-scrollbar {
       display: block;
       align-items: right;
     }
-    .logo {
-        font-size: 1.2em;
+   
+      .logo h2 {
+        font-size: 0.8em;
         font-weight: bold;
         color: hsl(0, 0%, 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 50px;
       }
-  
+      
+      .logoimg {
+        font-size: 1.5em;
+        width: 55px;
+        height: 40px;
+        font-weight: bold;
+        color: #1d72b8;
+        
+      }
     nav ul {
       display: none;
       /* Hide the navigation links */
@@ -256,7 +346,66 @@ body::-webkit-scrollbar {
     }
     
   }
+  @media (max-width: 480px) { /* For mobile devices */
+    nav ul li a {
+        font-size: 0.7em;
+    }
 
+    .logo h2 {
+        font-size: 0.8em;
+    }
+
+    .menu-icon span {
+        width: 25px;
+        height: 2px;
+    }
+
+    .content h1 {
+        font-size: 1.8rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 90%;
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    .menu-icon.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px)!important;
+      }
+    
+      .menu-icon.active span:nth-child(2) {
+        opacity: 0!important;
+      }
+    
+      .menu-icon.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px)!important;
+        
+      }
+    
+      nav ul.show {
+        display: flex;
+        /* Show the hidden links */
+      }
+      .uDW_Qe {
+          visibility: hidden;
+          margin: 0;
+          padding: 0;
+      }
+      .btn:hover {
+          background: linear-gradient(45deg, hsla(198, 23%, 80%, 0.548), hwb(204 36% 17% / 0.586)); /* Reverse gradient on hover */
+          transform: translateY(-5px); /* Slight upward lift */
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+      }
+      
+      .btn:active {
+          transform: translateY(0); /* Reset position on click */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+      }
+}
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -393,7 +542,7 @@ body::-webkit-scrollbar {
 .about-image img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -447,7 +596,10 @@ body::-webkit-scrollbar {
     font-size: 1.2rem;
     margin-bottom: 40px;
 }
-
+.service-card {
+    text-decoration: none !important;
+    color: #2980b9;
+}
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -469,12 +621,12 @@ body::-webkit-scrollbar {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px)rotate(10deg);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.service-card.tap-rotate {
-    transform: rotate(15deg);
+.service-card a:hover {
+    transform: rotate(15deg) ;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -520,6 +672,107 @@ body::-webkit-scrollbar {
         width: 100%;
     }
 }
+/* Services Popup */
+.service-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .service-popup h3 {
+    color: #010101;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .service-popup p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #010101;
+  }
+  
+  .service-close-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .service-popup a{
+    text-decoration: none;
+  }
+  
+  .service-close-btn:hover {
+    background: #0056b3;
+  }
+  .service-card a{
+    color: #0056b3;
+    text-decoration: none;
+  }
+  .service-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .service-popup {
+      width: 95%; /* Adjust width for tablets */
+      padding: 15px; /* Reduce padding for smaller screens */
+    }
+  
+    .service-popup h3 {
+      font-size: 1.3rem; /* Slightly smaller title font */
+    }
+  
+    .service-popup p {
+      font-size: 0.9rem; /* Slightly smaller content font */
+    }
+  
+    .service-close-btn {
+      padding: 8px 15px; /* Reduce button size */
+      font-size: 0.9rem; /* Smaller button text */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-popup {
+      width: 90%; /* Narrower for smaller phones */
+      padding: 10px; /* Further reduce padding */
+    }
+  
+    .service-popup h3 {
+      font-size: 1.2rem; /* Smaller title font for mobile */
+    }
+  
+    .service-popup p {
+      font-size: 0.85rem; /* Smaller content font for mobile */
+    }
+  
+    .service-close-btn {
+      padding: 6px 12px; /* Compact button size */
+      font-size: 0.85rem; /* Smaller button text */
+    }
+  }
+  
+  
 /* Contact Us Section */
 .contact-us {
 background-color: hsla(0, 0%, 97%, 0.39);
@@ -579,6 +832,106 @@ padding: 12px 20px;
 font-size: 1rem;
 }
 }
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    max-width: 90%; /* Adjusts for smaller screens */
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+    overflow-y: auto; /* Handles overflow content on smaller screens */
+  }
+  
+  .popup h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  
+  .popup p {
+    margin: 15px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .close-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .close-btn:hover {
+    background: #0056b3;
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+  
+  /* Media Queries for tablets */
+  @media (max-width: 768px) {
+    .popup {
+      width: 600px; /* Reduces popup size for tablets */
+      max-width: 90%; /* Ensures it fits smaller screens */
+      padding: 15px;
+    }
+  
+    .popup h3 {
+      font-size: 1.3rem;
+    }
+  
+    .popup p {
+      font-size: 0.95rem;
+    }
+  
+    .close-btn {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  }
+  
+  /* Media Queries for mobile devices */
+  @media (max-width: 480px) {
+    .popup {
+      width: 90%; /* Full width for smaller screens */
+      padding: 15px;
+    }
+  
+    .popup h3 {
+      font-size: 1.2rem;
+    }
+  
+    .popup p {
+      font-size: 0.9rem;
+    }
+  
+    .close-btn {
+      font-size: 0.85rem;
+      padding: 5px 10px;
+    }
+  }
+  
 /* Footer Styles */
 .footer {
 background-color: white;
